@@ -54,7 +54,7 @@ public class Usuario {
     }
 
     public List<String> leerArchivo() {
-        Path path = Paths.get("src/main/java/logica/TopPeoresContraseña.txt");
+        Path path = Paths.get("src/main/java/logica/TopPeoresContraseñas.txt");
         try {
             List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
             return lines;
