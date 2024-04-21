@@ -16,9 +16,7 @@ public class Main {
         System.out.println("Ingrese la nueva contraseña: ");
         contrasenia = teclado.nextLine();
         Usuario usuario = new Usuario(nombreUsuario, contrasenia);
-
-        System.out.println("El sistema indica: " + usuario.esContraseñaSegura());
-
+        usuario.esContraseñaSegura();
     }
 
 }
