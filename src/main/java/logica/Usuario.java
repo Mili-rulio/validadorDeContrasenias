@@ -30,7 +30,7 @@ public class Usuario {
 
     public boolean esContraseñaSegura() {
 
-        if (this.contrasenia.length() < 8 || seEncuentraEnElTopDeLasPeoresContraseñas())
+        if (this.contrasenia.length() < 8 || seEncuentraEnElTopDeLasPeoresContraseñas() || coincideConUsuario())
             return false;
 
         boolean tieneMayuscula = false;
@@ -66,12 +66,17 @@ public class Usuario {
 
 
     public boolean seEncuentraEnElTopDeLasPeoresContraseñas() {
-       int i = 0;
-        for(String cadena : this.leerArchivo()){
-            if (Objects.equals(contrasenia, cadena)){
+        int i = 0;
+        for (String cadena : this.leerArchivo()) {
+            if (Objects.equals(contrasenia, cadena)) {
                 i++;
             }
         }
         return i != 0; //si es verdadero significa que seEncuentraEnElTopDeLasPeoresContraseñas y arroja verdadero
+    }
+
+
+    public boolean coincideConUsuario() {
+    return Objects.equals(this.nombreUsuario, this.contrasenia);
     }
 }

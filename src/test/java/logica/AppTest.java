@@ -10,8 +10,6 @@ import org.junit.jupiter.api.Test;
 
 public class AppTest {
 
-//Elegir alguno de estos para la primer clase de equivalencia
-
 @Test
 
 //TEST SIN MAYÚSCULAS: NO PASA
@@ -46,7 +44,6 @@ public void contraseñaCorta(){
 }
 
 @Test
-// Segunda clase de equivalencia //
 
 //TEST CUMPLE TODOS LOS REQUISITOS Y ESTÁ EN LA LISTA DE LAS PEORES CONTRASEÑAS: NO PASA
 public void laContraseñaEstaEnLaLista(){
@@ -55,12 +52,19 @@ public void laContraseñaEstaEnLaLista(){
     }
 
 @Test
-// Tercer clase de equivalencia //
 
 //TEST CUMPLE TODOS LOS REQUISITOS Y NO ESTÁ EN LA LISTA DE LAS PEORES CONTRASEÑAS: PASA
 public void elUsuarioCumpleConLosRequisitosYNoEstaEnLaLista(){
         Usuario usuario = new Usuario("mrulio", "Lapiña32!");
     Assertions.assertTrue(usuario.esContraseñaSegura());
+    }
+
+    @Test
+
+//TEST CONTRASEÑA COINCIDE CON USUARIO: NO PASA
+    public void coincideConUsuario(){
+        Usuario usuario = new Usuario("Mrulio4!", "Mrulio4!");
+        Assertions.assertFalse(usuario.esContraseñaSegura());
     }
 
 
